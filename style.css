@@ -54,7 +54,11 @@ h1{
     color: gray;
 }
 
-.password-strength-type,
+.password-strength-type
+{
+    color:#10B981;
+}
+
 .strenth-password .bar-level-1,
 .strenth-password .bar-level-2{
     background: #10B981 ;
