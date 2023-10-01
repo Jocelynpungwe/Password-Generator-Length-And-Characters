@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: var(--medium-grey, #D5D4D8);
+    font-size: 1rem;
+    font-family: Inter;
+    user-select: none;
+}
+
+/* typography */
+
+
+h1,p{
+    margin-top: 0;;
+}
+
+
+h1{
+    display: flex; 
+    flex-direction: column;
+    color: #FFF;
+    font-size: 2.5rem;
+    font-family: Karla;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: -1px; 
+    margin-bottom: 10px;  
+}
+
+.h1-span{
+        color: #4ADF86
+}
+
+.subtitle{
+    color: var(--medium-grey, #D5D4D8);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 28px;
+    display: flex;
+    margin-top: .347em;
+}
+
+.character-label{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+    
+.strength-section > p{
+    color: gray;
+}
+
+.password-strength-type,
+.strenth-password .bar-level-1,
+.strenth-password .bar-level-2{
+    background: #10B981 ;
+}
+
+.strenth-password .bar-level-3{
+    background: orange;
+}
+
+.strenth-password .bar-level-4{
+    background: red;
+}
+
+/* layout */
+
+.container{
+    background: #1F2937;
+    width: 60%;
+    margin: 6.25em auto;
+    padding: 7.187em 3.25em; 
+}
+
+.copy{
+    display: none;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    color:#10B981;
+    font-weight: 700;
+    background: black;
+    padding-top: .5em;
+    position: absolute;
+    right: 50px;
+    top: 0;
+ 
+}
+
+.display-section{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 6px;
+    border: 3px solid white;
+    background: #273549;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1em 1.5em;
+}
+
+.password-display{
+    width: 70%;
+}
+
+.character-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.character-length{
+    background: #273549;
+    color: #10B981;
+    width: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.character-length-bar,
+.character-length-percentage{
+    height: 20px;
+    border: 4px solid #1F2937;
+    border-radius: 10px;
+}
+
+.character-length-bar{
+    margin: 1em 0;
+    background: #273549;
+}
+
+.character-length-percentage{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    bottom: 5px;
+    width: 60%;
+    background: #10B981;
+}
+
+.fa-circle{
+    font-size: 1.5rem;
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+}
+
+.character-check{
+    cursor: pointer;
+    accent-color: #10B981;
+}
+
+.strength-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 1em 1em 0;
+    margin-top: 1.5em;
+    background: #273549;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+
+}
+
+.strenth-password{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 10px ;
+}
+
+.strength-bar{
+    width: 15px;
+    height: 30px;
+    position: relative;
+    bottom: 5px;
+    background: white;
+    
+}
+
+/* button */
+
+.btn{
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    border-radius: 6px;
+    background: #10B981;
+    padding: 1em 1.5em;
+    margin-top: 1.5em;
+    color:#FFF;
+    border: none;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 600ms ease-in-out;
+
+}
+
+.btn:hover,
+.btn:focus{
+    background: #4ADF86;
+    transition: 600ms ease-in-out;
+    transform: scale(1.1);
+}
+
+.fa-copy{
+    cursor: pointer;
+    color: lightgreen;
+    transition: 500ms ease-out;
+}
+
+.fa-copy:hover,
+.fa-copy:focus{
+    transition: 500ms ease-in;
+    transform: scale(1.2);
+}
+
