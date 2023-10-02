@@ -24,27 +24,27 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let newCharacter
 
 
-generatePassword.addEventListener("click",()=>{
+generatePassword.addEventListener("click",function(){
     passwordOptions()
     displayPassword()
 })
 
 characterLength.addEventListener("change",characterLengthBarDisplay)
 
-copyBtn.addEventListener("click",()=>{
+copyBtn.addEventListener("click",function(){
     document.getElementById('finalPassword').focus()
     document.execCommand("copy")
 })
 
-copyBtn.addEventListener("mouseenter",()=>{
+copyBtn.addEventListener("mouseenter",function(){
     copyText.style.display = "block"
 })
 
-copyBtn.addEventListener("mouseleave",()=>{
+copyBtn.addEventListener("mouseleave",function(){
     copyText.style.display = "none"
 })
 
-const passwordOptions = () =>{
+function passwordOptions(){
 
     newCharacter = characters
      
@@ -73,7 +73,7 @@ const passwordOptions = () =>{
  
  }
  
-const displayPassword = () =>{
+function displayPassword(){
 
     let displayArray = []
 
@@ -89,13 +89,13 @@ const displayPassword = () =>{
 
 const randomNumber = data => Math.floor(Math.random() * data.length) 
 
-const characterLengthBarDisplay = () =>{
+function characterLengthBarDisplay(){
     let lengthPercentage = (characterLength.value/20) * 100
     characterLengthPercentage.style.width = `${lengthPercentage}%`
     strengthLevel()
 }   
 
-const strengthLevel = () =>{
+function strengthLevel(){
     
     if (characterLength.value > 5)
     {
