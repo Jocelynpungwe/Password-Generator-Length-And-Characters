@@ -24,64 +24,56 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let newCharacter
 
 
-generatePassword.addEventListener("click",function(){
+generatePassword.addEventListener("click",()=>{
     passwordOptions()
     displayPassword()
-    
 })
 
 characterLength.addEventListener("change",characterLengthBarDisplay)
 
-
-copyBtn.addEventListener("click",function(){
+copyBtn.addEventListener("click",()=>{
     document.getElementById('finalPassword').focus()
-
     document.execCommand("copy")
 })
 
-copyBtn.addEventListener("mouseenter",function(){
+copyBtn.addEventListener("mouseenter",()=>{
     copyText.style.display = "block"
 })
 
-copyBtn.addEventListener("mouseleave",function(){
+copyBtn.addEventListener("mouseleave",()=>{
     copyText.style.display = "none"
 })
 
-function randomNumber(data){
-    return Math.floor(Math.random() * data.length) 
-}
+const passwordOptions = () =>{
 
-function passwordOptions(){
-
-   newCharacter = characters
+    newCharacter = characters
+     
+   if(!uppercaseCheck.checked)
+   {
+     newCharacter = characters.join("").replace(/[A-Z]/g,"").split("")
+     
+   }
+  
+   if(!lowercaseCheck.checked)
+   {
+      newCharacter = newCharacter.join("").replace(/[a-z]/g,"").split("")
+   }
+  
+   if(!numberCheck.checked)
+   {
+      newCharacter = newCharacter.join("").replace(/[0-9]/g,"").split("")
     
-  if(!uppercaseCheck.checked)
-  {
-    newCharacter = characters.join("").replace(/[A-Z]/g,"").split("")
-    
-  }
+   }
  
-  if(!lowercaseCheck.checked)
-  {
-     newCharacter = newCharacter.join("").replace(/[a-z]/g,"").split("")
-  }
+   if(!symbolsCheck.checked)
+   {
+      newCharacter = newCharacter.join("").replace(/[^A-Z0-9]/ig,"").split("")
+     
+   }
  
-  if(!numberCheck.checked)
-  {
-     newCharacter = newCharacter.join("").replace(/[0-9]/g,"").split("")
-   
-  }
-
-  if(!symbolsCheck.checked)
-  {
-     newCharacter = newCharacter.join("").replace(/[^A-Z0-9]/ig,"").split("")
-    
-  }
-
-
-}
-
-function displayPassword(){
+ }
+ 
+const displayPassword = () =>{
 
     let displayArray = []
 
@@ -95,13 +87,15 @@ function displayPassword(){
 
 }
 
-function characterLengthBarDisplay(){
+const randomNumber = data => Math.floor(Math.random() * data.length) 
+
+const characterLengthBarDisplay = () =>{
     let lengthPercentage = (characterLength.value/20) * 100
     characterLengthPercentage.style.width = `${lengthPercentage}%`
     strengthLevel()
 }   
 
-function strengthLevel(){
+const strengthLevel = () =>{
     
     if (characterLength.value > 5)
     {
@@ -132,9 +126,7 @@ function strengthLevel(){
 
     }else
     {
-       
         barLevel3.classList.remove("bar-level-3")
-        
     }
 
     if(characterLength.value > 15 )
@@ -146,5 +138,4 @@ function strengthLevel(){
     {
         barLevel4.classList.remove("bar-level-4")
     }
-
 }
